@@ -1,0 +1,228 @@
+/* 📌 Global Styles */
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2f2f2f;  /* Dark background */
+    color: #e0e0e0;  /* Light text */
+}
+
+
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #1e1e1e;  /* Dark gray */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+
+/* 📌 Login Form */
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #333;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-container button:hover {
+    background: #0056b3;
+}
+
+/* 📌 Post Card */
+.post-card {
+    background: #222;  /* Dark Gray */
+    color: #e0e0e0;  /* Light Gray */
+    padding: 15px;
+    margin: 25px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-card h2 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.post-card p {
+    color: #ccc;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.actions button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.edit {
+    background: #444;
+    color: white;
+}
+
+.edit:hover {
+    background: #218838;
+}
+
+.delete {
+    background: #666;
+    color: white;
+}
+
+.delete:hover {
+    background: #c82333;
+}
+
+button:hover {
+    background: #555;
+}
+
+
+/* 📌 Navbar Styles */
+.navbar {
+    background: #1a1a1a;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* ✅ Keep login/logout on the right */
+    align-items: center;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.nav-left {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-right {
+    margin-left: auto; /* ✅ Push login/logout to the right */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Highlight active page */
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ✅ Keep Login Button Static */
+.login-btn {
+    color: white;
+    border: 1px solid #e0e0e0;
+    background: #222;  /* Dark Gray */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ Style Logout Button */
+.logout-btn {
+    background: #333;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #dcdcdc;
+    max-width: 800px;
+    margin: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2, p {
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+
+a {
+    color: hotpink;
+  } 
