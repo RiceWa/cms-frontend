@@ -6,7 +6,15 @@ const PostCard = ({ post, onEdit, onDelete, token }) => {
       <div className="post-card">
         <h2>{post.title}</h2>
         <p>{post.content}</p>
-        
+        <p><strong>Category:</strong> {post.category}</p>
+
+        {/* ✅ Display tags as clickable buttons */}
+        {post.tags.length > 0 && (
+          <p><strong>Tags:</strong> {post.tags.map(tag => (
+            <span key={tag} className="tag">{tag}</span>
+          ))}</p>
+        )}
+
         {/* Show edit/delete buttons only if logged in */}
         {token && (
           <div className="actions">
@@ -16,6 +24,6 @@ const PostCard = ({ post, onEdit, onDelete, token }) => {
         )}
       </div>
     );
-  };
-  
-  export default PostCard;  
+};
+
+export default PostCard;

@@ -73,8 +73,33 @@ body {
 }
 
 .post-card p {
+    margin: 5px 0;
     color: #ccc;
 }
+
+.post-card strong {
+    color: #959595;
+}
+
+.post-card .tags {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.post-card .tags strong {
+    color: #959595;
+}
+
+.tag {
+    display: inline-block;
+    background: #444;
+    color: white;
+    padding: 4px 8px;
+    margin: 2px;
+    font-size: 0.8em;
+    border-radius: 4px;
+}
+
 
 .actions {
     margin-top: 10px;
