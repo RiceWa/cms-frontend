@@ -27,7 +27,7 @@ const Home = () => {
         <div className="home-container">
             {/* Hero Section */}
             <section className="hero">
-                <h1>Welcome to My Digital Playground 🚀</h1>
+                <h1>Welcome to Where I Store My Coding Updates</h1>
                 <p>A collection of my thoughts, code, and progress.</p>
             </section>
 
@@ -66,7 +66,7 @@ const Home = () => {
 
             {/* About Me */}
             <section className="about">
-                <h2>👨‍💻 About Me</h2>
+                <h2> About Me</h2>
                 <p>Hey, my name is James, a developer trying out many languages.</p> 
                 <p>Currently exploring mobile development and refining my skills in Python and web development.</p>
             </section>
