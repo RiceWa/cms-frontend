@@ -21,6 +21,7 @@ const App = () => {
     const [editingProject, setEditingProject] = useState(null);
     const [editingPost, setEditingPost] = useState(null); // ✅ Add post editing state
 
+
     useEffect(() => {
         fetchProjects();
         fetchPosts(); // ✅ Fetch posts as well
@@ -36,13 +37,15 @@ const App = () => {
     };
 
     const fetchPosts = async () => {
-        try {
-            const response = await axios.get(`${API_BASE_URL}/api/posts`);
-            setPosts(response.data);
-        } catch (error) {
-            console.error("Error fetching posts:", error);
-        }
-    };
+      try {
+          const response = await axios.get(`${API_BASE_URL}/api/posts`);
+          setPosts(response.data);
+
+      } catch (error) {
+          console.error("Error fetching posts:", error);
+      }
+  };
+  
 
     const handleLogout = () => {
         localStorage.removeItem("token");

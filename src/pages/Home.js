@@ -12,7 +12,7 @@ const Home = () => {
         fetch(`${API_BASE_URL}/api/posts`)
             .then(res => res.json())
             .then(data => {
-                if (data.length > 0) setLatestPost(data[data.length - 1]);
+                if (data.length > 0) setLatestPost(data[0]);
             });
 
         // Fetch latest project
