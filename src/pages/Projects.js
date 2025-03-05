@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_BASE_URL from "../config";
 import ProjectCard from "../components/ProjectCard";
 
 const Projects = ({ token }) => {
@@ -16,7 +17,7 @@ const Projects = ({ token }) => {
 
     const fetchProjects = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/projects");
+            const response = await axios.get(`${API_BASE_URL}/api/projects`);
             setProjects(response.data);
         } catch (error) {
             console.error("Error fetching projects:", error);
@@ -32,12 +33,12 @@ const Projects = ({ token }) => {
 
         try {
             if (editingProject) {
-                await axios.put(`http://localhost:5000/api/projects/${editingProject}`, { title, description, link }, {
+                await axios.put(`${API_BASE_URL}/api/projects/${editingProject}`, { title, description, link }, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setMessage("Project updated successfully!");
             } else {
-                await axios.post("http://localhost:5000/api/projects", { title, description, link }, {
+                await axios.post(`${API_BASE_URL}/api/projects`, { title, description, link }, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setMessage("Project created successfully!");
@@ -61,7 +62,7 @@ const Projects = ({ token }) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/projects/${id}`, {
+            await axios.delete(`${API_BASE_URL}/api/projects/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             fetchProjects();

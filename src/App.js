@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_BASE_URL from "./config";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import PostCard from "./components/PostCard";
@@ -27,7 +28,7 @@ const App = () => {
 
     const fetchProjects = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/projects");
+            const response = await axios.get(`${API_BASE_URL}/api/projects`);
             setProjects(response.data);
         } catch (error) {
             console.error("Error fetching projects:", error);
@@ -36,7 +37,7 @@ const App = () => {
 
     const fetchPosts = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/posts");
+            const response = await axios.get(`${API_BASE_URL}/api/posts`);
             setPosts(response.data);
         } catch (error) {
             console.error("Error fetching posts:", error);
@@ -66,13 +67,13 @@ const App = () => {
             };
 
             if (editingProject) {
-                await axios.put(`http://localhost:5000/api/projects/${editingProject}`, projectData, {
+                await axios.put(`${API_BASE_URL}/api/projects/${editingProject}`, projectData, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setEditingProject(null);
                 setMessage("Project updated successfully!");
             } else {
-                await axios.post("http://localhost:5000/api/projects", projectData, {
+                await axios.post(`${API_BASE_URL}/api/projects`, projectData, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setMessage("Project created successfully!");
@@ -100,7 +101,7 @@ const App = () => {
 
     const handleProjectDelete = async (projectId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/projects/${projectId}`, {
+            await axios.delete(`${API_BASE_URL}/api/projects/${projectId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setMessage("Project deleted successfully!");
@@ -135,13 +136,13 @@ const App = () => {
             };
 
             if (editingPost) {
-                await axios.put(`http://localhost:5000/api/posts/${editingPost}`, postData, {
+                await axios.put(`${API_BASE_URL}/api/posts/${editingPost}`, postData, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setEditingPost(null);
                 setMessage("Post updated successfully!");
             } else {
-                await axios.post("http://localhost:5000/api/posts", postData, {
+                await axios.post(`${API_BASE_URL}/api/posts`, postData, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setMessage("Post created successfully!");
@@ -167,7 +168,7 @@ const App = () => {
 
     const handlePostDelete = async (postId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/posts/${postId}`, {
+            await axios.delete(`${API_BASE_URL}/api/posts/${postId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setMessage("Post deleted successfully!");

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/home.scss";
+import API_BASE_URL from "../config";
 
 const Home = () => {
     const [latestPost, setLatestPost] = useState(null);
@@ -8,14 +9,14 @@ const Home = () => {
 
     useEffect(() => {
         // Fetch latest blog post
-        fetch("http://localhost:5000/api/posts")
+        fetch(`${API_BASE_URL}/api/posts`)
             .then(res => res.json())
             .then(data => {
                 if (data.length > 0) setLatestPost(data[data.length - 1]);
             });
 
         // Fetch latest project
-        fetch("http://localhost:5000/api/projects")
+        fetch(`${API_BASE_URL}/api/projects`)
             .then(res => res.json())
             .then(data => {
                 if (data.length > 0) setLatestProject(data[0]); // Get the newest project
