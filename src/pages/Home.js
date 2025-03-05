@@ -69,7 +69,7 @@ const Home = () => {
             <section className="about">
                 <h2> About Me</h2>
                 <p>Hey, my name is James, a developer trying out many languages.</p> 
-                <p>Currently exploring mobile development and refining my skills in Python and web development.</p>
+                <p>Currently exploring Kotlin and refining my skills in Python, Web Development, and German.</p>
             </section>
         </div>
     );
