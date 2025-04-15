@@ -137,7 +137,7 @@ const App = () => {
                 category: category || "Uncategorized",
                 tags: tags.split(",").map(tag => tag.trim())
             };
-
+        
             if (editingPost) {
                 await axios.put(`${API_BASE_URL}/api/posts/${editingPost}`, postData, {
                     headers: { Authorization: `Bearer ${token}` }
@@ -150,15 +150,22 @@ const App = () => {
                 });
                 setMessage("Post created successfully!");
             }
-
+        
             setTitle("");
             setDescription("");
             setCategory("");
             setTags("");
             fetchPosts();
         } catch (error) {
-            setMessage("Error saving post. Are you logged in?");
+            if (error.response && error.response.status === 401) {
+                setMessage("Your session expired. Please log in again.");
+                localStorage.removeItem("token");
+                setToken("");
+            } else {
+                setMessage("Error saving post. Are you logged in?");
+            }
         }
+    
     };
 
     const handlePostEdit = (post) => {

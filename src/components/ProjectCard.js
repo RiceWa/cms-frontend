@@ -21,7 +21,7 @@ const ProjectCard = ({ project, onEdit, onDelete, token }) => {
             {project.link && (
                 <p>
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                        View Project
+                        View Project on Github
                     </a>
                 </p>
             )}
